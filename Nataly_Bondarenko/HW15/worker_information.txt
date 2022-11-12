@@ -1,4 +1,0 @@
-name,surname,position,salary
-Adam,Neumann,CEO,55000
-Monika,Geller,cook,10000
-Chandler,Bing,lawyer,25000
