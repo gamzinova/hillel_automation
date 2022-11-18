@@ -1,0 +1,79 @@
+Xpath 
+
+website:https://www.saucedemo.com/
+
+page: login page
+username input : //*[@id="user-name"]
+password input : //*[@id="password"]
+login button : //*[@id="login-button"]
+error message when entering a wrong password: //*[@data-test="error"]
+
+main page:
+menu button: //*[@id="react-burger-menu-btn"]
+logout button on the menu ://*[@id="logout_sidebar_link"]
+cart button: //*[@class="shopping_cart_link"]
+filter button: //*[@class="product_sort_container"]
+filter from A to Z: //*[@value="az"]
+first item on the page: //*[@alt="Sauce Labs Backpack"]
+first item - add to cart button: //*[@name="add-to-cart-sauce-labs-backpack"]
+
+item page:
+back to products button: //*[@id="back-to-products"]
+picture of the item: //*[@alt="Sauce Labs Backpack"]
+add to cart button: //*[@id="add-to-cart-sauce-labs-backpack"]
+remove from the cart button: //*[@id="remove-sauce-labs-backpack"]
+continue shopping button: //*[@id="continue-shopping"]
+checkout button: //*[@id="checkout"]
+
+checkout page:
+first name input: //*[@id="first-name"]
+last name input: //*[@id="last-name"]
+cancel button: //*[@id="cancel"]
+continue button : //*[@id="continue"]
+
+checkout overview page:
+item in the cart: //*[@class="inventory_item_name"]
+payment information: //*[@class="summary_value_label"]
+total price: //*[@class="summary_total_label"]
+cancel://*[@id="cancel"]
+finish://*[@id="finish"]
+
+checkout finish page:
+thank for the order header: //*[@class="complete-header"]
+label picture: //*[@alt="Pony Express"]
+back home button: //*[@id="back-to-products"]
+
+footer:
+twitter: //*[@class="social_twitter"]
+facebook: //*[@class="social_facebook"]
+linkedin: //*[@class="social_linkedin"]
+
+CSS 
+
+website:https://www.saucedemo.com/
+
+page: login page
+username input: #user-name
+password input: #password
+login button: #login-button
+error message when entering a wrong password:[data-test="error"]
+
+main page:
+menu button: #react-burger-menu-btn
+logout button on the menu: # logout_sidebar_link
+cart button: [class="shopping_cart_link"]
+filter button:[class="product_sort_container"]
+filter from A to Z: [value="az"]
+the first item on the page: [alt="Sauce Labs Backpack"]
+the first item - add to cart button: [name="add-to-cart-sauce-labs-backpack"]
+
+item page:
+back to products button: #back-to-products
+picture of the item: [alt="Sauce Labs Backpack"]
+add to cart button: #add-to-cart-sauce-labs-backpack
+remove from the cart button: #remove-sauce-labs-backpack
+continue shopping button: #continue-shopping
+checkout button: #checkout
+
+
+
