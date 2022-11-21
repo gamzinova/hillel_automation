@@ -41,5 +41,9 @@ class CheckoutPage(BasePage):
         return self.is_displayed(locators.error_message_checkout)
 
     def cancel_checkout_button(self):
-        return self.click(locators.cancel_button)
-
+        """
+         A function that forwards the user to the Main page after clicking the cancel button on the checkout page
+        """
+        self.click(locators.cancel_button)
+        # return MainPage(self._driver)
+        # I do not know how this function should return, I have tried to import main page, but it causes circular import error

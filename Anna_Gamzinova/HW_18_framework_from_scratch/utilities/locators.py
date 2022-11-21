@@ -26,6 +26,7 @@ first_item_remove = (By.XPATH, '//*[@id="remove-sauce-labs-backpack"]')
 back_to_products_button = (By.XPATH, '//*[@id="back-to-products"]')
 picture_item = (By.XPATH, '//*[@alt="Sauce Labs Backpack"]')
 add_to_cart_button = (By.XPATH, '//*[@id="add-to-cart-sauce-labs-backpack"]')
+remove_the_item_item_page = (By.XPATH, '//*[@id="remove-sauce-labs-backpack"]')
 
 # cart page
 remove_from_the_cart_button = (By.XPATH, '//*[@id="remove-sauce-labs-backpack"]')

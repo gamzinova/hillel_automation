@@ -94,6 +94,7 @@ def test_checkout(open_cart_page_with_item):
     checkout_page = cart_page_with_item.checkout_button_click()
     assert checkout_page.first_name_info() is True, "User has not been forwarded to checkout page"
 
+
 @pytest.mark.cart_page
 def test_set_values_and_continue(open_checkout_page):
     checkout_page = open_checkout_page
@@ -113,5 +114,28 @@ def test_empty_checkout_info_error(open_checkout_page):
 @pytest.mark.cart_page
 def test_cancel_checkout(open_checkout_page):
     checkout_page = open_checkout_page
-    checkout_page.cancel_checkout_button()
+    main_page = checkout_page.cancel_checkout_button()
     assert main_page.products_banner() is True, "You haven't been forwarded to the main page"
+
+
+# @pytest.mark.item_page
+# def test_back_to_products_from_item_page(open_item_page):
+#     item_page = open_item_page
+#     main_page = item_page.back_to_products_button()
+#     assert main_page.is_header_displayed() is True, "User was not forwarded to the new page"
+
+@pytest.mark.item_page
+def test_add_item_to_cart_item_page(open_item_page):
+    item_page = open_item_page
+    item_page.add_to_cart_button()
+    assert item_page.remove_item() is True, "Can't add item"
+
+
+# @pytest.mark.item_page
+# def test_remove_item_from_cart_item_page(open_item_page):
+#     item_page = open_item_page
+#     item_page.add_to_cart_button().remove_from_cart_item_page()
+#     assert item_page.is_add_to_cart_button() is True, "Can't remove item"
+
+
+

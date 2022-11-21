@@ -1,6 +1,5 @@
 import pytest
 
-
 from Anna_Gamzinova.HW_18_framework_from_scratch.page_objects.login_page import LoginPage
 from Anna_Gamzinova.HW_18_framework_from_scratch.utilities.config_parser import ReadConfig
 from Anna_Gamzinova.HW_18_framework_from_scratch.utilities.driver_factory import DriverFactory
@@ -46,3 +45,11 @@ def open_checkout_page(open_cart_page_with_item):
     cart_page = open_cart_page_with_item
     checkout_page = cart_page.checkout_button_click()
     return checkout_page
+
+
+@pytest.fixture()
+def open_item_page(open_main_page):
+    item_page = open_main_page.first_item_click()
+    return item_page
+
+
