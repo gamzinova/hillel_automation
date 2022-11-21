@@ -42,3 +42,6 @@ class MainPage(BasePage):
 
     def menu_is_displayed(self):
         return self.is_displayed(locators.menu_bar)
+
+    def products_banner(self):
+        return self.is_displayed(locators.products_banner)

@@ -11,6 +11,7 @@ error_message = (By.XPATH, '//*[@data-test="error"]')
 
 # main page:
 header = (By.XPATH, '//*[@class="app_logo"]')
+products_banner = (By.XPATH, '//*[@class="title"]')
 menu_button = (By.XPATH, '//*[@id="react-burger-menu-btn"]')
 menu_bar = (By.XPATH, '//*[@class="bm-item-list"]')
 logout_button = (By.XPATH, '//*[@id="logout_sidebar_link"]')
@@ -25,15 +26,22 @@ first_item_remove = (By.XPATH, '//*[@id="remove-sauce-labs-backpack"]')
 back_to_products_button = (By.XPATH, '//*[@id="back-to-products"]')
 picture_item = (By.XPATH, '//*[@alt="Sauce Labs Backpack"]')
 add_to_cart_button = (By.XPATH, '//*[@id="add-to-cart-sauce-labs-backpack"]')
+
+# cart page
 remove_from_the_cart_button = (By.XPATH, '//*[@id="remove-sauce-labs-backpack"]')
 continue_shopping_button = (By.XPATH, '//*[@id="continue-shopping"]')
 checkout_button = (By.XPATH, '//*[@id="checkout"]')
+item_in_the_cart = (By.XPATH, '//*[@class="inventory_item_name"]')
+cart_item = (By.XPATH, '//*[@class="cart_item_label"]')
 
 # checkout page:
 first_name_input = (By.XPATH, '//*[@id="first-name"]')
 last_name_input = (By.XPATH, '//*[@id="last-name"]')
+zip_input = (By.XPATH, '//*[@id="postal-code"]')
 cancel_button = (By.XPATH, '//*[@id="cancel"]')
-continue_button = (By.XPATH, '//*[@id="continue"]')
+continue_checkout_button = (By.XPATH, '//*[@id="continue"]')
+checkout_form = (By.XPATH, '//*[@class="checkout_info"]')
+error_message_checkout = (By.XPATH, '//*[@data-test="error"]')
 
 # checkout overview page:
 cart_item = (By.XPATH, '//*[@class="inventory_item_name"]')

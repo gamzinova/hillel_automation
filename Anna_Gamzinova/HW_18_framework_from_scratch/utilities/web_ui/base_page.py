@@ -17,6 +17,9 @@ class BasePage:
     def wait_until_element_visible(self, locator):
         return self.__wait.until(EC.visibility_of_element_located(locator))
 
+    def element_visible(self, locator):
+        return self._driver.find_elements(locator)
+
     def send_keys(self, locator, value, is_clear=True):
         element = self.wait_until_element_located(locator)
         if is_clear:
@@ -33,3 +36,4 @@ class BasePage:
             return True
         except TimeoutException:
             return False
+

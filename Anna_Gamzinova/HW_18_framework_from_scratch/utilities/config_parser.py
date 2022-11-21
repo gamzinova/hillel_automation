@@ -21,3 +21,15 @@ class ReadConfig:
     @staticmethod
     def get_driver_id():
         return config.get('browser', 'browser_id')
+
+    @staticmethod
+    def get_first_name():
+        return config.get('checkout_information', 'first_name')
+
+    @staticmethod
+    def get_last_name():
+        return config.get('checkout_information', 'last_name')
+
+    @staticmethod
+    def get_zip():
+        return config.get('checkout_information', 'zip')
