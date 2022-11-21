@@ -27,7 +27,7 @@ class CheckoutPage(BasePage):
 
     def click_continue_button(self):
         self.click(locators.continue_checkout_button)
-        return OverviewPage
+        return OverviewPage(self._driver)
 
     def set_checkout_info(self, first_name_value, last_name_value, zip_code_value):
         self.set_first_name(first_name_value).set_last_name(last_name_value).set_zip_code(zip_code_value)
@@ -38,9 +38,8 @@ class CheckoutPage(BasePage):
         return self
 
     def error_message_checkout(self):
-        self.is_displayed(locators.error_message_checkout)
-        return self
+        return self.is_displayed(locators.error_message_checkout)
 
     def cancel_checkout_button(self):
-        main_page = self.click(locators.cancel_button)
-        return main_page
+        return self.click(locators.cancel_button)
+

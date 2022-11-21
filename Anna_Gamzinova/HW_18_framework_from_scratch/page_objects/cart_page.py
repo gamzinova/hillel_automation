@@ -17,7 +17,8 @@ class CartPage(BasePage):
         return self.click(locators.remove_from_the_cart_button)
 
     def continue_shopping_button(self):
-        return self.click(locators.continue_shopping_button)
+        self.click(locators.continue_shopping_button)
+        return main_page(self._driver)
 
     def menu_click(self):
         self.click(locators.menu_button)
@@ -29,4 +30,4 @@ class CartPage(BasePage):
 
     def checkout_button_click(self):
         self.click(locators.checkout_button)
-        return CheckoutPage
+        return CheckoutPage(self._driver)

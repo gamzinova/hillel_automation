@@ -1,3 +1,5 @@
+import time
+
 import pytest
 from Anna_Gamzinova.HW_18_framework_from_scratch.utilities.config_parser import ReadConfig
 
@@ -87,13 +89,11 @@ def test_logout_from_cart(open_cart_page_with_item, open_login_page):
 
 
 @pytest.mark.cart_page
-# TODO
 def test_checkout(open_cart_page_with_item):
-    checkout_page = open_cart_page_with_item.checkout_button_click()
+    cart_page_with_item = open_cart_page_with_item
+    checkout_page = cart_page_with_item.checkout_button_click()
     assert checkout_page.first_name_info() is True, "User has not been forwarded to checkout page"
 
-
-# TODO
 @pytest.mark.cart_page
 def test_set_values_and_continue(open_checkout_page):
     checkout_page = open_checkout_page
@@ -102,16 +102,16 @@ def test_set_values_and_continue(open_checkout_page):
     assert overview_page.payment_information() is True, "User has not been forwarded to overview page"
 
 
-# TODO
 @pytest.mark.cart_page
 def test_empty_checkout_info_error(open_checkout_page):
     checkout_page = open_checkout_page
     checkout_page.continue_button_no_values()
     assert checkout_page.error_message_checkout() is True, "User was able to checkout"
 
+
 # TODO
 @pytest.mark.cart_page
 def test_cancel_checkout(open_checkout_page):
     checkout_page = open_checkout_page
-    main_page = checkout_page.cancel_checkout_button()
+    checkout_page.cancel_checkout_button()
     assert main_page.products_banner() is True, "You haven't been forwarded to the main page"

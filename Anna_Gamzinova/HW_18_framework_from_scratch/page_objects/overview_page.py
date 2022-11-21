@@ -7,5 +7,5 @@ class OverviewPage(BasePage):
         super().__init__(driver)
 
     def payment_information(self):
-        self.is_displayed(locators.payment_information)
-        return self
+        return self.is_displayed(locators.payment_information)
+
