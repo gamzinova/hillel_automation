@@ -10,10 +10,6 @@ class OverviewPage(BasePage):
     def payment_information(self):
         return self.is_displayed(locators.payment_information)
 
-    # def cancel_overview_button(self):
-    #     self.click(locators.cancel)
-    #     return MainPage(self._driver)
-
     def finish_button(self):
         self.click(locators.finish)
         return FinishPage(self._driver)
