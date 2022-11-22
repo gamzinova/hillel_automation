@@ -1,8 +1,8 @@
 import configparser
+from Anna_Gamzinova.HW_18_framework_from_scratch.CONSTANTS import ROOT_DIR
 
 config = configparser.RawConfigParser()
-config.read(
-    '/home/gamzinova/PycharmProjects/Automation/hillel_python_qa_homeworks_AG/Anna_Gamzinova/HW_18_framework_from_scratch/configurations/configurations.ini')
+config.read(f'{ROOT_DIR}/configurations/configurations.ini')
 
 
 class ReadConfig:

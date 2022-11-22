@@ -8,6 +8,7 @@ username_input = (By.XPATH, '//*[@id="user-name"]')
 password_input = (By.XPATH, '//*[@id="password"]')
 login_button = (By.XPATH, '//*[@id="login-button"]')
 error_message = (By.XPATH, '//*[@data-test="error"]')
+empty_values = (By.XPATH, '//*[@class="error-message-container error"]')
 
 # main page:
 header = (By.XPATH, '//*[@class="app_logo"]')

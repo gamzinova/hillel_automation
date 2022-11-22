@@ -18,7 +18,7 @@ class CartPage(BasePage):
 
     def continue_shopping_button(self):
         self.click(locators.continue_shopping_button)
-        return main_page(self._driver)
+        return self
 
     def menu_click(self):
         self.click(locators.menu_button)

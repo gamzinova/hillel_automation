@@ -31,7 +31,7 @@ class CheckoutPage(BasePage):
 
     def set_checkout_info(self, first_name_value, last_name_value, zip_code_value):
         self.set_first_name(first_name_value).set_last_name(last_name_value).set_zip_code(zip_code_value)
-        return CheckoutPage
+        return CheckoutPage(self._driver)
 
     def continue_button_no_values(self):
         self.click(locators.continue_checkout_button)
@@ -45,5 +45,5 @@ class CheckoutPage(BasePage):
          A function that forwards the user to the Main page after clicking the cancel button on the checkout page
         """
         self.click(locators.cancel_button)
-        # return MainPage(self._driver)
-        # I do not know how this function should return, I have tried to import main page, but it causes circular import error
+        return self
+

@@ -1,3 +1,4 @@
+from Anna_Gamzinova.HW_18_framework_from_scratch.page_objects.cart_page import CartPage
 from Anna_Gamzinova.HW_18_framework_from_scratch.utilities.web_ui.base_page import BasePage
 from Anna_Gamzinova.HW_18_framework_from_scratch.utilities import locators
 
@@ -26,3 +27,15 @@ class ItemPage(BasePage):
 
     def remove_item(self):
         return self.is_displayed(locators.remove_the_item_item_page)
+
+    def menu_click(self):
+        self.click(locators.menu_button)
+        return self
+
+    def logout_click(self):
+        self.click(locators.logout_button)
+        return self
+
+    def cart_click(self):
+        self.click(locators.cart_button)
+        return CartPage(self._driver)

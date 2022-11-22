@@ -1,5 +1,4 @@
 from Anna_Gamzinova.HW_18_framework_from_scratch.utilities.web_ui.base_page import BasePage
-from selenium.webdriver.common.by import By
 from Anna_Gamzinova.HW_18_framework_from_scratch.utilities import locators
 from Anna_Gamzinova.HW_18_framework_from_scratch.page_objects.item_page import ItemPage
 from Anna_Gamzinova.HW_18_framework_from_scratch.page_objects.cart_page import CartPage

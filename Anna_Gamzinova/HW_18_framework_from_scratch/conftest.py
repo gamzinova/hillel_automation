@@ -1,5 +1,6 @@
 import pytest
 
+from Anna_Gamzinova.HW_18_framework_from_scratch.page_objects.main_page import MainPage
 from Anna_Gamzinova.HW_18_framework_from_scratch.page_objects.login_page import LoginPage
 from Anna_Gamzinova.HW_18_framework_from_scratch.utilities.config_parser import ReadConfig
 from Anna_Gamzinova.HW_18_framework_from_scratch.utilities.driver_factory import DriverFactory
@@ -24,6 +25,11 @@ def open_main_page(open_login_page):
     login_page = open_login_page
     main_page = login_page.login(ReadConfig.get_user_name(), ReadConfig.get_user_password())
     return main_page
+
+
+@pytest.fixture()
+def init_main_page(create_driver):
+    return MainPage(create_driver)
 
 
 @pytest.fixture()
@@ -53,3 +59,9 @@ def open_item_page(open_main_page):
     return item_page
 
 
+@pytest.fixture()
+def open_overview_page(open_checkout_page):
+    checkout_page = open_checkout_page
+    checkout_page.set_checkout_info(ReadConfig.get_first_name(), ReadConfig.get_last_name(), ReadConfig.get_zip())
+    overview_page = checkout_page.click_continue_button()
+    return overview_page

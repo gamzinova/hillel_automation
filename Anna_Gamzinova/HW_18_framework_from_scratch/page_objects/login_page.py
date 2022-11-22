@@ -28,3 +28,6 @@ class LoginPage(BasePage):
 
     def login_button_displayed(self):
         return self.is_displayed(locators.login_button)
+
+    def empty_values_error_message_displayed(self):
+        return self.is_displayed(locators.empty_values)
