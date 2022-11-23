@@ -6,7 +6,7 @@ import pytest
 def test_item_click_opens_item_page(open_main_page):
     main_page = open_main_page
     item_page = main_page.first_item_click()
-    assert item_page.picture_item() is True, "The item page has not been open"
+    assert item_page.is_picture_item() is True, "The item page has not been open"
 
 
 @pytest.mark.regression
@@ -29,7 +29,7 @@ def test_remove_item_from_cart_item_page(open_item_page):
 def test_logout_from_item_page(open_item_page, open_login_page):
     open_item_page.menu_click().logout_click()
     login_page = open_login_page
-    assert login_page.login_button_displayed() is True, "User has not logged out"
+    assert login_page.is_login_button_displayed() is True, "User has not logged out"
 
 
 @pytest.mark.regression
@@ -37,11 +37,11 @@ def test_logout_from_item_page(open_item_page, open_login_page):
 def test_open_cart(open_item_page):
     item_page = open_item_page
     cart_page = item_page.cart_click()
-    assert cart_page.cart_item() is True, "The cart page has not been open"
+    assert cart_page.is_cart_item() is True, "The cart page has not been open"
 
 
 @pytest.mark.regression
 @pytest.mark.item_page
 def test_add_item_to_cart_item_page(open_item_page):
     item_page = open_item_page.add_to_cart_button()
-    assert item_page.remove_item() is True, "Can't add item"
+    assert item_page.is_remove_item() is True, "Can't add item"

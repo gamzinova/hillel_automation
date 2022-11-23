@@ -6,7 +6,7 @@ from Anna_Gamzinova.HW_18_framework_from_scratch.utilities.config_parser import 
 from Anna_Gamzinova.HW_18_framework_from_scratch.utilities.driver_factory import DriverFactory
 
 
-@pytest.fixture(scope='session')
+@pytest.fixture()
 def create_driver():
     driver = DriverFactory.create_driver(driver_id=ReadConfig.get_driver_id())
     driver.maximize_window()
@@ -22,13 +22,17 @@ def open_login_page(create_driver):
 
 @pytest.fixture()
 def open_main_page(open_login_page):
-    login_page = open_login_page
-    main_page = login_page.login(ReadConfig.get_user_name(), ReadConfig.get_user_password())
-    return main_page
+    """
+    A fixture that opens a main page after login
+    """
+    return open_login_page.login(ReadConfig.get_user_name(), ReadConfig.get_user_password())
 
 
 @pytest.fixture()
 def init_main_page(create_driver):
+    """
+    Initialize a main page object
+    """
     return MainPage(create_driver)
 
 

@@ -21,7 +21,7 @@ def test_login(open_login_page):
 def test_login_invalid(open_login_page, username_value, password_value):
     login_page = open_login_page
     login_page.set_username(username_value).set_password(password_value).click_login_button()
-    assert login_page.error_message_displayed() is True, "User has logged in "
+    assert login_page.is_error_message_displayed() is True, "User has logged in "
 
 
 @pytest.mark.regression
@@ -31,7 +31,7 @@ def test_login_invalid(open_login_page, username_value, password_value):
 def test_login_invalid(open_login_page, username_value, password_value):
     login_page = open_login_page
     login_page.set_username(username_value).set_password(password_value).click_login_button()
-    assert login_page.empty_values_error_message_displayed() is True, "User has logged in "
+    assert login_page.is_empty_values_error_message_displayed() is True, "User has logged in "
 
 
 @pytest.mark.regression
