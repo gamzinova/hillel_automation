@@ -1,12 +1,12 @@
 import pytest
-from Anna_Gamzinova.HW_18_framework_from_scratch.utilities.config_parser import ReadConfig
+from Anna_Gamzinova.framework_from_scratch.utilities.config_parser import ReadConfig
 
 
 @pytest.mark.regression
 @pytest.mark.login_page
-def test_login(open_login_page):
+def test_login(open_login_page, env):
     login_page = open_login_page
-    main_page = login_page.login(ReadConfig.get_user_name(), ReadConfig.get_user_password())
+    main_page = login_page.login(env.user_name, env.password)
     assert main_page.is_header_displayed() is True, "User was not logged-in"
 
 

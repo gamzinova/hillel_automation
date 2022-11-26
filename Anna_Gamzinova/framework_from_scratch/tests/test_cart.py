@@ -1,5 +1,5 @@
 import pytest
-from Anna_Gamzinova.HW_18_framework_from_scratch.utilities.config_parser import ReadConfig
+from Anna_Gamzinova.framework_from_scratch.utilities.config_parser import ReadConfig
 
 
 @pytest.mark.regression

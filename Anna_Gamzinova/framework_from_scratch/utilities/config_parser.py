@@ -1,5 +1,5 @@
 import configparser
-from Anna_Gamzinova.HW_18_framework_from_scratch.CONSTANTS import ROOT_DIR
+from Anna_Gamzinova.framework_from_scratch.CONSTANTS import ROOT_DIR
 
 config = configparser.RawConfigParser()
 config.read(f'{ROOT_DIR}/configurations/configurations.ini')

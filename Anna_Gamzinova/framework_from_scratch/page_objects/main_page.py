@@ -1,8 +1,8 @@
 from __future__ import annotations
-from Anna_Gamzinova.HW_18_framework_from_scratch.utilities.web_ui.base_page import BasePage
-from Anna_Gamzinova.HW_18_framework_from_scratch.locators import xpath_locators
-from Anna_Gamzinova.HW_18_framework_from_scratch.page_objects.item_page import ItemPage
-from Anna_Gamzinova.HW_18_framework_from_scratch.page_objects.cart_page import CartPage
+from Anna_Gamzinova.framework_from_scratch.utilities.web_ui.base_page import BasePage
+from Anna_Gamzinova.framework_from_scratch.locators import xpath_locators
+from Anna_Gamzinova.framework_from_scratch.page_objects.item_page import ItemPage
+from Anna_Gamzinova.framework_from_scratch.page_objects.cart_page import CartPage
 
 
 class MainPage(BasePage):
