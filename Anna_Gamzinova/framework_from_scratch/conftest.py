@@ -10,6 +10,13 @@ from Anna_Gamzinova.framework_from_scratch.utilities.driver_factory import Drive
 
 
 @pytest.fixture()
+def env():
+    with open(f'{ROOT_DIR}/configurations/configurations.json') as file:
+        env_dict = json.loads(file.read())
+    return Configurations(**env_dict)
+
+
+@pytest.fixture()
 def create_driver():
     driver = DriverFactory.create_driver(driver_id=ReadConfig.get_driver_id())
     driver.maximize_window()
@@ -72,10 +79,3 @@ def open_overview_page(open_checkout_page):
     checkout_page.set_checkout_info(ReadConfig.get_first_name(), ReadConfig.get_last_name(), ReadConfig.get_zip())
     overview_page = checkout_page.click_continue_button()
     return overview_page
-
-
-@pytest.fixture()
-def env():
-    with open(f'{ROOT_DIR}/configurations/configurations.json') as file:
-        env_dict = json.loads(file.read())
-    return Configurations(**env_dict)
