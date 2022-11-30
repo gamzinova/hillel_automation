@@ -1,6 +1,9 @@
+import json
 from http import HTTPStatus
 
-from Anna_Gamzinova.api_collections.people_collection import PeopleAPI
+from Anna_Gamzinova.api_collections.conftest import delete_last_person
+from Anna_Gamzinova.api_collections.objects.people_collection import PeopleAPI
+from Anna_Gamzinova.api_collections.objects.person import Person
 
 
 def test_get_person_200():
@@ -16,41 +19,31 @@ def test_get_people_200():
                                                   f'\nExpected: {HTTPStatus.OK}'
 
 
-def test_create_person():
-    new_user = {
-        "name": "Santa Clause",
-        "gender": "male",
-        "email": "hohoho1@gmail.com",
-        "status": "active"}
-    response = PeopleAPI().create_person(new_user)
+def test_create_person(delete_last_person, env):
+    delete_last_person
+    new_user = Person(env.name1, env.gender1, env.email1, env.status)
+    response = PeopleAPI().create_person(new_user.get_dict())
     assert response.status_code == HTTPStatus.CREATED, \
         f'Status code is not as expected\n Actual: {response.status_code}' \
         f'\nExpected: {HTTPStatus.CREATED}'
 
 
-def test_create_person_name_check():
+def test_create_person_name_check(delete_last_person, env):
     """
     A test checks that the user ws created with the requested name
     """
-    new_user = {
-        "name": "Mickie Mouse",
-        "gender": "male",
-        "email": "hellomickie1@gmail.com",
-        "status": "active"}
-    response = PeopleAPI().create_person(new_user)
+    delete_last_person
+    new_user = Person(env.name1, env.gender1, env.email1, env.status)
+    response = PeopleAPI().create_person(new_user.get_dict())
     person_values = response.json().values()
-    user_value = new_user.values()
+    user_value = new_user.get_dict().values()
     assert list(user_value)[1] in person_values, \
         f'A user was created with a wrong name'
 
 
-def test_create_existing_person():
-    existing_user = {
-        "name": "Santa Clause",
-        "gender": "male",
-        "email": "hohoho1@gmail.com",
-        "status": "active"}
-    response = PeopleAPI().create_person(existing_user)
+def test_create_existing_person(env):
+    existing_user = Person(env.name1, env.gender1, env.email1, env.status)
+    response = PeopleAPI().create_person(existing_user.get_dict())
     assert response.status_code == HTTPStatus.UNPROCESSABLE_ENTITY, \
         f'Status code is not as expected\n Actual: {response.status_code}' \
         f'\nExpected: {HTTPStatus.UNPROCESSABLE_ENTITY}'

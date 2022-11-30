@@ -1,8 +1,7 @@
 import json
 from os import path
 
-from Anna_Gamzinova.api_collections.base_api import BaseAPI
-
+from Anna_Gamzinova.api_collections.utilities.base_api import BaseAPI
 
 
 class PeopleAPI(BaseAPI):

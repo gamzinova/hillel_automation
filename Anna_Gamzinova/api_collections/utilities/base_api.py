@@ -1,4 +1,4 @@
-from Anna_Gamzinova.api_collections.config_file import BASE_URL, API_KEY
+from Anna_Gamzinova.api_collections.configurations.config_file import BASE_URL, API_KEY
 import requests
 from os import path
 
