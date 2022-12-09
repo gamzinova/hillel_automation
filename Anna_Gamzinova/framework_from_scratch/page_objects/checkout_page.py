@@ -2,8 +2,10 @@ from __future__ import annotations
 from Anna_Gamzinova.framework_from_scratch.page_objects.overview_page import OverviewPage
 from Anna_Gamzinova.framework_from_scratch.utilities.web_ui.base_page import BasePage
 from Anna_Gamzinova.framework_from_scratch.locators import xpath_locators
+from Anna_Gamzinova.framework_from_scratch.utilities.decorators import auto_add_step
 
 
+@auto_add_step
 class CheckoutPage(BasePage):
     def __init__(self, driver):
         super().__init__(driver)

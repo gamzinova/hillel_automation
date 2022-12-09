@@ -1,6 +1,8 @@
 import json
+from Anna_Gamzinova.api_collections.utilities.decorators import auto_add_step
 
 
+@auto_add_step
 class Person:
     def __init__(self, name, gender, email, status, **kwargs):
         self.name = name if 'name' not in kwargs.keys() else kwargs['name']
@@ -17,4 +19,3 @@ class Person:
 
     def get_json(self):
         return json.dumps(self.__dict__)
-
