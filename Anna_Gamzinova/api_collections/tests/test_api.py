@@ -94,3 +94,10 @@ def test_keys():
     person_keys = response.json()[0].keys()
     dict_keys = {'id': '', 'name': '', 'email': '', 'gender': '', 'status': ''}
     assert person_keys == dict.keys(dict_keys), f'Dictionary keys are incorrect'
+
+
+def test_keys_fail():
+    response = PeopleAPI().get_list_of_people()
+    person_keys = response.json()[0].keys()
+    dict_keys = {'id': '', 'name': '', 'email': '', 'gender': '', 'status': ''}
+    assert person_keys != dict.keys(dict_keys), f'This test should fail'
