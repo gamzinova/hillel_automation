@@ -1,0 +1,9 @@
+{
+  "user" : "postgres",
+  "password" : "hello_password",
+  "host" : "127.0.0.1",
+  "port" : "5432",
+  "database" : "my_new_database",
+  "product_table" : "products",
+  "order_table" : "orders"
+}
