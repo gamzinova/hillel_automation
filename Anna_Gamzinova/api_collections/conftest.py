@@ -1,8 +1,8 @@
 import pytest
 import json
-from Anna_Gamzinova.api_collections.CONSTANTS import ROOT_DIR
-from Anna_Gamzinova.api_collections.objects.people_collection import PeopleAPI
-from Anna_Gamzinova.api_collections.utilities.configurations import Configurations
+from hillel_automation.Anna_Gamzinova.api_collections.CONSTANTS import ROOT_DIR
+from hillel_automation.Anna_Gamzinova.api_collections.objects.people_collection import PeopleAPI
+from hillel_automation.Anna_Gamzinova.api_collections.utilities.configurations import Configurations
 
 
 @pytest.fixture()

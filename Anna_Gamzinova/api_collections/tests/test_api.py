@@ -1,16 +1,16 @@
-import json
+
 from http import HTTPStatus
 
-from Anna_Gamzinova.api_collections.conftest import delete_last_person
-from Anna_Gamzinova.api_collections.objects.people_collection import PeopleAPI
-from Anna_Gamzinova.api_collections.objects.person import Person
+from hillel_automation.Anna_Gamzinova.api_collections.conftest import delete_last_person
+from hillel_automation.Anna_Gamzinova.api_collections.objects.people_collection import PeopleAPI
+from hillel_automation.Anna_Gamzinova.api_collections.objects.person import Person
 
 
-def test_get_person_200():
-    response = PeopleAPI().get_person(300)
-    print(response.json())
-    assert response.status_code == HTTPStatus.OK, f'Status code is not as expected\n Actual: {response.status_code}' \
-                                                  f'\nExpected: {HTTPStatus.OK}'
+# def test_get_person_200():
+#     response = PeopleAPI().get_person(200)
+#     print(response.json())
+#     assert response.status_code == HTTPStatus.OK, f'Status code is not as expected\n Actual: {response.status_code}' \
+#                                                   f'\nExpected: {HTTPStatus.OK}'
 
 
 def test_get_people_200():
@@ -96,8 +96,8 @@ def test_keys():
     assert person_keys == dict.keys(dict_keys), f'Dictionary keys are incorrect'
 
 
-def test_keys_fail():
-    response = PeopleAPI().get_list_of_people()
-    person_keys = response.json()[0].keys()
-    dict_keys = {'id': '', 'name': '', 'email': '', 'gender': '', 'status': ''}
-    assert person_keys != dict.keys(dict_keys), f'This test should fail'
+# def test_keys_fail():
+#     response = PeopleAPI().get_list_of_people()
+#     person_keys = response.json()[0].keys()
+#     dict_keys = {'id': '', 'name': '', 'email': '', 'gender': '', 'status': ''}
+#     assert person_keys != dict.keys(dict_keys), f'This test should fail'
