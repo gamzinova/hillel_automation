@@ -1,5 +1,5 @@
 import json
-from hillel_automation.Anna_Gamzinova.api_collections.utilities.decorators import auto_add_step
+from Anna_Gamzinova.api_collections.utilities.decorators import auto_add_step
 
 
 @auto_add_step

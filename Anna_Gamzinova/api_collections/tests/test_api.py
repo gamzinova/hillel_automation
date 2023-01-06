@@ -1,9 +1,9 @@
 
 from http import HTTPStatus
 
-from hillel_automation.Anna_Gamzinova.api_collections.conftest import delete_last_person
-from hillel_automation.Anna_Gamzinova.api_collections.objects.people_collection import PeopleAPI
-from hillel_automation.Anna_Gamzinova.api_collections.objects.person import Person
+from Anna_Gamzinova.api_collections.conftest import delete_last_person
+from Anna_Gamzinova.api_collections.objects.people_collection import PeopleAPI
+from Anna_Gamzinova.api_collections.objects.person import Person
 
 
 # def test_get_person_200():
